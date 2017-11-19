@@ -12,6 +12,6 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Hi from backend from Docker V4";
+        return "Hi from backend from Docker V5";
     }
 }
