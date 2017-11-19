@@ -15,7 +15,7 @@ node {
 
   stage ('Run Application') {
     try {
-      sh "docker run gihan/restbackend:${env.BUILD_NUMBER}"
+      sh "docker run -p 9092:8080 gihan/restbackend:${env.BUILD_NUMBER}"
 
     } catch (error) {
     } finally {
