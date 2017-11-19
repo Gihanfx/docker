@@ -9,7 +9,8 @@ node {
 
   stage('Create Docker Image') {
     dir('RestBackend') {
-      docker.build("gihan/restbackend:${env.BUILD_NUMBER}")
+     // docker.build("gihan/restbackend:${env.BUILD_NUMBER}")
+     	docker.build("gihan/restbackend:30")
     }
   }
 
