@@ -20,6 +20,6 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Docker V1";
+        return "Docker V2";
     }
 }
