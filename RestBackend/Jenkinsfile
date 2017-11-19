@@ -1,0 +1,26 @@
+node {
+  checkout scm
+  env.PATH = "${tool 'Maven3'}/bin:${env.PATH}"
+  stage('Package') {
+    dir('RestBackend') {
+      sh 'mvn clean package'
+    }
+  }
+
+  stage('Create Docker Image') {
+    dir('RestBackend') {
+      docker.build("gihan/restbackend:${env.BUILD_NUMBER}")
+    }
+  }
+
+  stage ('Run Application') {
+    try {
+      sh "docker run gihan/restbackend:${env.BUILD_NUMBER}"
+
+    } catch (error) {
+    } finally {
+     
+    }
+  }
+
+}
